@@ -1,0 +1,273 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<main class="index">
+        
+        <!-- Page Contents -->
+        <div class="pusher login-block">
+          <div class="ui vertical masthead center aligned segment">
+              <div class="header_menu">
+                <div class="ui container">
+                <div class="ui large secondary menu">
+                    <a class="ui orange big label">LOGO</a>
+                    <a class="item gray">全方位解决您的资金困难</a>
+                </div>
+                </div>
+            </div>
+            <div class="ui grid">
+                    <div class="column five wide right floated login-block__formtab">
+                      <div class="ui orange  top attached tabular menu ">
+                          <a class="item active" data-tab="first">登录</a>
+                          <a class="item" data-tab="second">注册</a>
+                      </div>
+                      <form class="ui large form bottom attached tab segment active" data-tab="first">
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="user icon"></i>
+                              <input type="text" name="phone" placeholder="手机号" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="lock icon"></i>
+                              <input type="password" name="password" placeholder="密码" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                            </div>
+                          </div>
+                          <div class="field">
+                              <a href="/auth/login">
+                                <div class="ui fluid huge orange submit button">
+                                    我要贷款<i class="right arrow icon"></i></div>
+                              </a>
+                          </div>
+                          <div class="field ui right aligned container">
+                            <a class="gray" href="/find_password">忘记密码？</a>
+                         </div>
+                        <div class="ui error message"></div>
+                      </form>
+                      <form class="ui large form bottom attached tab segment" data-tab="second">
+                              <div class="field">
+                                <div class="ui left icon input">
+                                  <i class="user icon"></i>
+                                  <input type="text" name="phone" placeholder="手机号" autocomplete="off">
+                                </div>
+                              </div>
+                              <div class="two fields">
+                                    <div class="field">
+                                        <div class="ui left icon input">
+                                            <i class="share icon"></i>
+                                            <input type="password" name="password" placeholder="手机验证码" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="four wide field">
+                                        <a href="" class="ui orange send-code button">发送验证码</a>
+                                    </div>
+                              </div>
+                              <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" placeholder="密码" autocomplete="off">
+                                </div>
+                                </div>
+                                <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" placeholder="密码确认" autocomplete="off">
+                                </div>
+                                </div>
+                                <a href="/userinfo">
+                                <div class="ui fluid large orange submit button">注册</div>
+                                </a>
+                            <div class="ui error message"></div>
+                          </form>
+                     
+                    </div>
+                  </div>
+            </div>
+            
+          </div>
+        <div class="ui orange inverted segment process">
+          <div class="ui equal width center aligned padded grid ">
+                <div class="row">
+                    <h1 class="ui dividing header centered">贷款，比您想象的更简单</h1>
+                </div>
+                <div class="three column row">
+                        <div class="process__item">
+                                <i class="huge orange circular link edit icon"></i>
+                                    <h3><i>10秒</i>申请</h3>        
+                        </div>
+                        <div>
+                            <i class="big angle double right icon"></i>
+                        </div>
+                        <div class="process__item">
+                                <i class="huge orange circular link send icon"></i>
+                                <h3><i>10分钟</i>联系</h3>    
+                        </div>
+                        <div>
+                              <i class="big angle double right icon"></i>
+                         </div>
+                        <div class="process__item">
+                                <i class="huge orange circular link yen icon"></i>
+                                <h3>最快<i>10分钟</i>放款</h3>    
+                        </div>
+                </div>
+
+
+          </div>
+        </div>
+
+        <div class="ui light-grey segment plan">
+                <div class="ui equal width center aligned padded grid ">
+                      <div class="row">
+                          <h1 class="ui dividing header centered">您的难处都有方案</h1>
+                      </div>
+                      <div class="row padded center aligned">
+                              <div class="plan__item">
+                                      <i class="green huge circular car icon"></i>
+                                      <h3 class="ui header centered">买车</h3>        
+                              </div>
+                              <div class="plan__item">
+                                      <i class="red huge circular home icon"></i>
+                                      <h3 class="ui header centered">买房</h3>      
+                              </div>
+                              <div class="plan__item">
+                                      <i class="blue huge circular codepen icon"></i>
+                                      <h3 class="ui header centered">装修</h3>        
+                              </div>
+                              <div class="plan__item">
+                                    <i class="yellow huge circular pie chart icon"></i>
+                                    <h3 class="ui header centered">经营</h3>         
+                            </div>
+                      </div>
+                      <div class="row">
+                        <div class="center aligned column">
+                            <a class="ui orange huge long button no_radius">立即借款</a>
+                        </div>
+                       </div>
+                </div>
+         </div>
+        
+
+
+         <div class="ui segment caculate">
+                <div class="ui center aligned padded grid ">
+                      <div class="row">
+                          <h1 class="ui dividing header centered">还款算一算</h1>
+                      </div>
+                      <div class="payment_center">
+                            <div class="payment_need">
+                                <span class="payment_month">每月还款：</span>
+                                <span class="alb">¥1716.67</span>
+                            </div>
+                            <ul class="loan_need term">
+                                <li>金额</li>
+                                <li class="sum-word cur">2万</li>
+                                <li class="sum-word">3万</li>
+                                <li class="sum-word">5万</li>
+                                <li class="sum-word">8万</li>
+                                <li class="sum-word">其他</li>
+                            </ul>
+                            <input class="input-data" type="text" value="20000" disabled="disabled" maxlength="7" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+                            <img class="foot-ben" src="http://res.rongzi.com/main/newmain/images/static/yixin/foot-ben.jpg">
+                            <ul class="term">
+                                <li>期限</li>
+                                <li class="sum-word cur">12个月</li>
+                                <li class="sum-word">18个月</li>
+                                <li class="sum-word">24个月</li>
+                                <li class="sum-word">36个月</li>
+                                <li class="sum-word">48个月</li>
+                            </ul>
+                            <span class="ui button orange caculate_submit">
+                                算一算
+                            </span>
+                        </div>
+                      <div class="row">
+                        <div class="center aligned column">
+                            <a class="ui orange huge long button no_radius">立即借款</a>
+                        </div>
+                       </div>
+                </div>
+         </div>
+
+
+
+
+
+          <div class="ui vertical quote light-grey segment">
+            <div class="ui center aligned equal width stackable internally grid">
+                <div class="row">
+                    <h1 class="ui dividing header centered">让融资更简单</h1>
+               </div>
+              <div class="center aligned row">
+                <div class="five wide column">
+                        <div class="ui items    ">
+                            <div class="item">
+                                <a class="ui tiny image">
+                                    <i class="big bordered inverted orange trophy icon"></i>
+                                </a>
+                                <div class="content">
+                                <h2 class="header"><span>7</span>年</h2>
+                                <div class="description">
+                                    成立至今
+                                </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a class="ui tiny image">
+                                    <i class="big bordered inverted orange database icon"></i>
+                                </a>
+                                <div class="content">
+                                <h2 class="header"><span>360</span>亿</h2>
+                                <div class="description">
+                                    累计放款额
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="five wide column">
+                    <div class="five wide column">
+                            <div class="ui items">
+                                <div class="item">
+                                    <a class="ui tiny image">
+                                        <i class="big bordered inverted orange users icon"></i>
+                                    </a>
+                                    <div class="content">
+                                    <h2 class="header"><span>68900</span>位</h2>
+                                    <div class="description">
+                                        客户成功放款
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                        <a class="ui tiny image">
+                                            <i class="big bordered inverted orange flag outline icon"></i>
+                                        </a>
+                                        <div class="content">
+                                        <h2 class="header"><span>8342</span>个</h2>
+                                        <div class="description">
+                                            合作产品
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="ui inverted vertical grey center aligned footer segment">
+              <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="column">
+                  <h4 class="ui inverted header"><i class="volume control phone icon"></i>联系我们</h4>
+                  <p>Copyright (C) 2017 xxx Corporation. All Rights Reserved.</p>
+                </div>
+              </div>
+          </div>
+    </main>
+    <script>
+        $('.menu .item')
+            .tab();
+        ;
+    </script>
+{% endblock %}

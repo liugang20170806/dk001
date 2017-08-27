@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+{% block body %}
+<main class="userinfo">
+<!-- <div class="ui bottom attached segment"> -->
+        <div class="ui visible left vertical sidebar menu">
+            <div class="item">
+            <span class="ui orange button">LOGO</span>
+            　个人中心
+            </div>
+        <a  href="/" class="item">
+            <i class="home icon"></i>
+            首页
+        </a>
+        <a class="item active">
+            <i class="block layout icon"></i>
+            完善资料
+        </a>
+        <a class="item">
+            <i class="block power icon"></i>
+            退出登录
+            </a>
+        </div>
+        <div class="pusher">
+        <div class="ui basic container segment">
+                    <h2 class="ui header ">完善资料</h2>
+                    <form class="ui form">
+                            <h4 class="ui dividing header">申请人资料</h4>
+                            <div class="field">
+                            <div class="two fields">
+                                <div class="required field">
+                                <label>申请人姓名</label>
+                                <input type="text" name="user[name]" placeholder="name">
+                                </div>
+                                <div class="required field">
+                                <label>身份证号码</label>
+                                <input type="text" name="user[idcard]" placeholder="idcard">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="field">
+                                <div class="required field">
+                                <label>常用手机</label>
+                                <input type="text" name="user[phone]" placeholder="phone">
+                                </div>
+                            </div>
+                            <div class="required inline fields">
+                                <label for="sex">选择您的性别:</label>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                            <input type="radio" name="sex" checked="" tabindex="0" class="hidden">
+                                            <label>男</label>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="ui radio checkbox">
+                                            <input type="radio" name="sex" tabindex="0" class="hidden">
+                                            <label>女</label>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="field">
+                                    <div class="two fields">
+                                    <div class="field">
+                                        <label>申请人QQ</label>
+                                        <input type="text" name="shipping[first-name]" placeholder="QQ">
+                                    </div>
+                                    <div class="field">
+                                        <label>申请人微信</label>
+                                        <input type="text" name="shipping[last-name]" placeholder="Wechat">
+                                    </div>
+                                    </div>
+                                </div>
+                            <h4 class="ui dividing header">详细信息</h4>
+                            <div class="two fields">
+                            <div class="required field">
+                                <label>教育程度</label>
+                                <select class="ui fluid dropdown">
+                                    <option value="WV">研究生以上</option>
+                                    <option value="WI">大学本科</option>
+                                    <option value="WY">中专及高中</option>
+                                    <option value="WY">初中</option>
+                                    <option value="WY">其它</option>
+                                </select>
+                            </div>
+                            <div class="required field">
+                                <label>婚姻状况</label>
+                                <select class="ui fluid dropdown">
+                                    <option value="WV">已婚</option>
+                                    <option value="WI">未婚</option>
+                                    <option value="WY">离异</option>
+                                    <option value="WY">丧偶</option>
+                                </select>
+                            </div>
+                            </div>
+
+                            <div class="two fields">
+                                    <div class="required field">
+                                    <label>就业状态</label>
+                                    <select class="ui fluid dropdown">
+                                        <option value="WV">全职</option>
+                                        <option value="WI">兼职</option>
+                                        <option value="WY">自雇</option>
+                                        <option value="WY">自由职业</option>
+                                        <option value="WY">其它</option>
+                                    </select>
+                                    </div>
+                                    <div class="required field">
+                                        <label>住宅性质</label>
+                                        <select class="ui fluid dropdown">
+                                            <option value="WV">自购</option>
+                                            <option value="WI">与父母同住</option>
+                                            <option value="WY">租用</option>
+                                            <option value="WY">单位宿舍</option>
+                                            <option value="WY">其它</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="two fields">
+                                <div class="required field">
+                                        <label>单位性质</label>
+                                        <select class="ui fluid dropdown">
+                                            <option value="WV">国有</option>
+                                            <option value="WI">私营</option>
+                                            <option value="WY">联营</option>
+                                            <option value="WY">股份制</option>
+                                            <option value="WV">个体</option>
+                                            <option value="WI">合伙</option>
+                                            <option value="WY">机关</option>
+                                            <option value="WY">三资企业</option>
+                                            <option value="WY">其它</option>
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <label>单位座机</label>
+                                        <input type="text" name="card[number]" maxlength="16" placeholder="tel">
+                                    </div>
+                                </div>
+                                
+                                <div class="three fields">
+                                <div class="required field">
+                                    <label>省份</label>
+                                    <select class="ui fluid dropdown">
+                                        <option value="WV">四川</option>
+                                        <option value="WI">北京</option>
+                                    </select>
+                                </div>
+                                <div class="required field">
+                                    <label>城市</label>
+                                    <select class="ui fluid dropdown">
+                                        <option value="WV">成都</option>
+                                        <option value="WI">北京</option>
+                                    </select>
+                                    </div>
+                                <div class="required field">
+                                    <label>区/县</label>
+                                    <select class="ui fluid dropdown">
+                                        <option value="WV">高新区</option>
+                                        <option value="WI">朝阳区</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="field">
+                                    <div class="field">
+                                    <label>住址座机</label>
+                                    <input type="text" name="user[phone]" placeholder="tel">
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                <div class="two fields">
+                                    <div class="required field">
+                                    <label>信用卡总张数</label>
+                                    <input type="text" name="user[name]" placeholder="credit card number">
+                                    </div>
+                                    <div class="required field">
+                                    <label>信用卡总额度</label>
+                                    <input type="text" name="user[idcard]" placeholder="credit card limit">
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="ui button" tabindex="0">确认提交</div>
+                    </form>
+                
+        </div>
+        </div>
+  </main>
+{% endblock %}

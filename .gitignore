@@ -1,3 +1,5 @@
-\HTML
-\cache
-\log
+HTML
+cache
+logs
+tests
+vendor

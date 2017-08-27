@@ -1,0 +1,297 @@
+ body{
+    font: 300 1em/1.8 Lato,"PingFang SC","Lantinghei SC",
+    "Microsoft Yahei","Hiragino Sans GB","Microsoft Sans Serif","WenQuanYi Micro Hei",
+     Helvetica, sans-serif;
+ }
+ h1,
+ h2,
+ h3,
+ h4,
+ h5 {
+   font-family: inherit !important;
+   font-weight: normal !important;
+ }
+ a.gray{
+     color: gray !important;
+ }
+ .bg-white{
+     background-color: white !important;
+ }
+ .button.send-code{
+    width: 120px !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+ }
+ /* custom start*/
+
+  .masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+    padding-top: 0;
+  }
+  .header_menu{
+    padding-top: 12px;
+    padding-bottom: 5px;
+    background-color: rgba(255,255,255,1);
+  }
+  
+
+ .login-block{
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   background-image: url(../img/bg.jpg);
+ }
+ .login-block__formtab{
+    margin-top: 8%;
+    margin-right: 10%;
+ }
+ .login-block__formtab .ui.segment{
+     background-color: #eee;
+     padding-top: 1.2em;
+ }
+ .ui.attached.tabular.menu{
+     background-color: white;
+ }
+ .login-block__formtab .tabular .item{
+    width: 50%;
+    line-height: 20px;
+    justify-content: center;
+    font-size: 18px;
+ }
+ .index .ui.segment.process,.ui.segment.plan,.ui.segment.caculate,.ui.segment.quote{
+     margin: 0;
+     padding: 5em 2em;  
+ }
+ .ui.segment.light-grey{
+     background-color: #f6f8f7;
+ }
+ .index .ui.segment.process .header{
+    color: white;
+    border-color: white;
+ }
+ .index i.huge.icon, i.huge.icons{
+     font-size: 6em;
+ }
+ .index i.big.icon, i.big.icons{
+    font-size: 3em;
+    color: rgba(255,255,255,.5);
+}
+.index h1.ui.header {
+     margin-bottom: 1em;
+ } 
+ .process .process__item{
+    margin-right: 3em;
+    margin-left: 3em;
+ }
+ .process .process__item .icon{
+     background-color: white;
+ }
+ .process .process__item i.huge.icon:hover{
+    -webkit-animation: button-spin 0.4s ease-out; 
+    animation: button-spin 0.4s ease-out; 
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+ }
+ .process .process__item h3 i{
+     font-size: 30px;
+     margin-right: 8px;
+     margin-left: 5px
+ }
+ .process .three.column.row{
+    align-items:center;
+    justify-content:center; 
+ }
+ .process .three.column.row .right.icon{
+    margin-bottom: 1em;
+ }
+ .plan .plan__item {
+    position: relative;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+ }
+ .plan .plan__item h3{
+     position: absolute;
+     bottom: 1em;
+     left: 3.8em;
+     color: gray;
+ }
+ .plan .plan__item i.circular.icon{
+    padding: 0.4em 0.5em !important;
+ }
+ .plan .plan__item i.huge.icon:hover{
+    transition: .2s ease-out;
+    padding: 0.3em 0.5em !important;
+ }
+
+ h1.ui.header{
+     font-weight: 400;
+     font-size: 38px;
+ }
+ .ui.button.no_radius{
+     border-radius: 0 !important;
+ }
+ /* custom over */
+
+ /* caculate paste */
+
+.payment_center {
+    width: 799px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    margin: 0px auto;
+    background-color: #f6f8f7;
+    padding: 3em 1em;
+}
+.payment_need {
+    width: 698px;
+    height: 92px;
+    line-height: 92px;
+    text-align: center;
+    font-size: 28px;
+    background-color: rgb(253, 139, 42);
+    border-radius: 6px;
+    margin: 0px auto;
+}
+.payment_need .alb {
+    font-size: 42px;
+}
+.loan_need {
+    margin-top: 50px;
+    display: block;
+    height: 39px;
+}
+.loan_need li:first-child {
+    font-size: 16px;
+}
+.loan_need li {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 36px;
+    margin-right: 15px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 18px;
+}
+.input-data {
+    color: rgb(102, 102, 102);
+    line-height: 40px;
+    width: 463px;
+    margin-left: 96px;
+    height: 40px;
+    text-align: center;
+    font-size: 36px;
+    background-color: transparent;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+}
+.foot-ben {
+    margin-left: 96px;
+    display: block;
+    margin-bottom: 30px;
+}
+.payment_center ul {
+    color: rgb(153, 153, 153);
+}
+.term {
+    display: block;
+    height: 39px;
+}
+.term .cur {
+    color: rgb(255, 255, 255);
+    background-color: rgb(253, 139, 42);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 4px;
+}
+.term .sum-word {
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(153, 153, 153);
+    border-image: initial;
+    border-radius: 4px;
+}
+.term li {
+    font-size: 18px;
+}
+.term li {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 36px;
+    margin-right: 15px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+}
+.caculate_submit {
+    height: 12em;
+    line-height: 11em !important;
+    position: absolute;
+    top: 185px;
+    right: 57px;
+    cursor: pointer;
+}
+
+.button.long{
+    width: 12em;
+    margin-top: 2em;
+}
+/* quote */
+.quote .ui.items{
+    margin: auto 10px;
+}
+.quote .ui.items > .item > .image + .content{
+    padding: 21px 2em;
+    margin-left: 1.8em;
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: white;
+    font-size: 18px;
+}
+.quote .ui.items > .item > .image + .content .description{
+    color: gray;
+    margin-top: 0;
+}
+.quote .ui.items > .item > .image + .content .header span{
+    font-size: 32px;
+    color: red;
+}
+.quote .ui.items > .item > .image i{
+    font-size: 50px;
+}
+
+
+/* userinfo */
+.userinfo {
+   background-color: #f6f8f7;
+}
+.userinfo .pushable{
+    height: 100vh;
+}
+.userinfo .pusher{
+    max-width: 900px;
+    padding: 30px 50px;
+}
+
+/* find_password */
+main.find_password{
+    width: 100%;
+    height: 100%;
+}
+.find_password > .grid {
+    height: 100%;
+  }
+ .find_password .column {
+    max-width: 450px;
+  }
