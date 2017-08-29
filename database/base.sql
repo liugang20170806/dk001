@@ -8,13 +8,16 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
 
 CREATE TABLE IF NOT EXISTS `tb_userinfo` (
   `user_id` int(11) unsigned NOT NULL COMMENT 'userID',
-  `true_name` varchar(32) DEFAULT NULL COMMENT 'true name',
+  `user_phone` varchar(20) NOT NULL COMMENT 'user_phone',
+  `true_name` varchar(32) NOT NULL COMMENT 'true_name',
   `sex` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1M 2F',
   `idcard` varchar(18) NULL COMMENT 'idcard',
   `qq` varchar(15) DEFAULT NULL COMMENT 'QQ',
   `wechat` varchar(15) DEFAULT NULL COMMENT 'wechat',
   `education` varchar(16) DEFAULT NULL COMMENT 'education',
   `marry` varchar(8) DEFAULT NULL COMMENT 'Married, unmarried, widowed',
+  `employ` varchar(16) DEFAULT NULL COMMENT 'employment status',
+  `residence` varchar(16) DEFAULT NULL COMMENT 'residence status',
   `work_unit` varchar(16) DEFAULT NULL COMMENT 'nature of work units',
   `work_tel` varchar(20) DEFAULT NULL COMMENT 'work tel ',
   `area_1` varchar(32) DEFAULT NULL COMMENT 'province',

@@ -8,17 +8,16 @@ if (PHP_SAPI == 'cli-server') {
         return false;
     }
 }
-define('DS', DIRECTORY_SEPARATOR);
-define('ROOT', realpath('..') . DS);
-define('APP_PATH', dirname(__DIR__)  .DS. 'app' . DS);
-require __DIR__ . '/../vendor/autoload.php';
+
+// all files path related to root
+chdir(dirname(__DIR__));
+
+require 'vendor/autoload.php';
 
 session_start();
 
 // Instantiate the app
-$settings = require __DIR__ . '/../app/settings.php';
-$db = new PDO("mysql:host=localhost;dbname=loan", $settings['database']['user'], $settings['database']['password'] );
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$settings = require 'app/settings.php';
 
 $app = new \Slim\App($settings);
 
@@ -39,13 +38,17 @@ $container['view'] = function ($container) {
 
 
 // Set up dependencies
-require __DIR__ . '/../app/dependencies.php';
+require 'app/dependencies.php';
 
 // Register middleware
-require __DIR__ . '/../app/middleware.php';
+require 'app/middleware.php';
 
 // Register routes
-require __DIR__ . '/../app/routes.php';
+require 'app/routes.php';
+
+// SMS
+require 'app/SMS/ChuanglanSmsHelper/ChuanglanSmsApi.php';
+
 
 // Run app
 $app->run();

@@ -15,7 +15,7 @@
             <i class="block layout icon"></i>
             完善资料
         </a>
-        <a class="item">
+        <a class="item" href="/logout">
             <i class="block power icon"></i>
             退出登录
             </a>
@@ -23,37 +23,37 @@
         <div class="pusher">
         <div class="ui basic container segment">
                     <h2 class="ui header ">完善资料</h2>
-                    <form class="ui form">
+                    <form class="ui form" id="userinfo-form" method="POST" action="/userinfo/update">
                             <h4 class="ui dividing header">申请人资料</h4>
                             <div class="field">
                             <div class="two fields">
                                 <div class="required field">
                                 <label>申请人姓名</label>
-                                <input type="text" name="user[name]" placeholder="name">
+                                <input type="text" name="true_name" placeholder="name">
                                 </div>
                                 <div class="required field">
                                 <label>身份证号码</label>
-                                <input type="text" name="user[idcard]" placeholder="idcard">
+                                <input type="text" name="idcard" placeholder="idcard">
                                 </div>
                             </div>
                             </div>
                             <div class="field">
                                 <div class="required field">
                                 <label>常用手机</label>
-                                <input type="text" name="user[phone]" placeholder="phone">
+                                <input type="text" name="user_phone" placeholder="user_phone">
                                 </div>
                             </div>
                             <div class="required inline fields">
                                 <label for="sex">选择您的性别:</label>
                                 <div class="field">
-                                    <div class="ui radio checkbox">
-                                            <input type="radio" name="sex" checked="" tabindex="0" class="hidden">
+                                    <div class="ui checkbox">
+                                            <input type="radio" name="sex" value="1" {%if info.sex == 1%}checked{%endif%}>
                                             <label>男</label>
                                             </div>
                                         </div>
                                         <div class="field">
-                                            <div class="ui radio checkbox">
-                                            <input type="radio" name="sex" tabindex="0" class="hidden">
+                                            <div class="ui checkbox">
+                                            <input type="radio" name="sex" value="2" {%if info.sex == 2%}checked{%endif%}>
                                             <label>女</label>
                                         </div>
                                     </div>
@@ -62,11 +62,11 @@
                                     <div class="two fields">
                                     <div class="field">
                                         <label>申请人QQ</label>
-                                        <input type="text" name="shipping[first-name]" placeholder="QQ">
+                                        <input type="text" name="qq" placeholder="QQ" value="{{ info.qq }}">
                                     </div>
                                     <div class="field">
                                         <label>申请人微信</label>
-                                        <input type="text" name="shipping[last-name]" placeholder="Wechat">
+                                        <input type="text" name="wechat" placeholder="Wechat" value="{{ info.wechat }}">
                                     </div>
                                     </div>
                                 </div>
@@ -74,21 +74,21 @@
                             <div class="two fields">
                             <div class="required field">
                                 <label>教育程度</label>
-                                <select class="ui fluid dropdown">
-                                    <option value="WV">研究生以上</option>
-                                    <option value="WI">大学本科</option>
-                                    <option value="WY">中专及高中</option>
-                                    <option value="WY">初中</option>
-                                    <option value="WY">其它</option>
+                                <select class="ui fluid dropdown" name="education">
+                                    <option value="研究生以上">研究生以上</option>
+                                    <option value="大学本科">大学本科</option>
+                                    <option value="中专及高中">中专及高中</option>
+                                    <option value="初中">初中</option>
+                                    <option value="其它">其它</option>
                                 </select>
                             </div>
                             <div class="required field">
                                 <label>婚姻状况</label>
-                                <select class="ui fluid dropdown">
-                                    <option value="WV">已婚</option>
-                                    <option value="WI">未婚</option>
-                                    <option value="WY">离异</option>
-                                    <option value="WY">丧偶</option>
+                                <select class="ui fluid dropdown" name="marry">
+                                    <option value="已婚">已婚</option>
+                                    <option value="未婚">未婚</option>
+                                    <option value="离异">离异</option>
+                                    <option value="丧偶">丧偶</option>
                                 </select>
                             </div>
                             </div>
@@ -96,22 +96,22 @@
                             <div class="two fields">
                                     <div class="required field">
                                     <label>就业状态</label>
-                                    <select class="ui fluid dropdown">
-                                        <option value="WV">全职</option>
-                                        <option value="WI">兼职</option>
-                                        <option value="WY">自雇</option>
-                                        <option value="WY">自由职业</option>
-                                        <option value="WY">其它</option>
+                                    <select class="ui fluid dropdown" name="employ">
+                                        <option value="全职">全职</option>
+                                        <option value="兼职">兼职</option>
+                                        <option value="自雇">自雇</option>
+                                        <option value="自由职业">自由职业</option>
+                                        <option value="其它">其它</option>
                                     </select>
                                     </div>
                                     <div class="required field">
                                         <label>住宅性质</label>
-                                        <select class="ui fluid dropdown">
-                                            <option value="WV">自购</option>
-                                            <option value="WI">与父母同住</option>
-                                            <option value="WY">租用</option>
-                                            <option value="WY">单位宿舍</option>
-                                            <option value="WY">其它</option>
+                                        <select class="ui fluid dropdown" name="residence">
+                                            <option value="自购">自购</option>
+                                            <option value="与父母同住">与父母同住</option>
+                                            <option value="租用">租用</option>
+                                            <option value="单位宿舍">单位宿舍</option>
+                                            <option value="其它">其它</option>
                                         </select>
                                     </div>
                                     
@@ -120,51 +120,46 @@
                                 <div class="two fields">
                                 <div class="required field">
                                         <label>单位性质</label>
-                                        <select class="ui fluid dropdown">
-                                            <option value="WV">国有</option>
-                                            <option value="WI">私营</option>
-                                            <option value="WY">联营</option>
-                                            <option value="WY">股份制</option>
-                                            <option value="WV">个体</option>
-                                            <option value="WI">合伙</option>
-                                            <option value="WY">机关</option>
-                                            <option value="WY">三资企业</option>
-                                            <option value="WY">其它</option>
+                                        <select class="ui fluid dropdown" name="work_unit">
+                                            <option value="国有">国有</option>
+                                            <option value="私营">私营</option>
+                                            <option value="联营">联营</option>
+                                            <option value="股份制">股份制</option>
+                                            <option value="个体">个体</option>
+                                            <option value="合伙">合伙</option>
+                                            <option value="机关">机关</option>
+                                            <option value="三资企业">三资企业</option>
+                                            <option value="其它">其它</option>
                                         </select>
                                     </div>
                                     <div class="field">
                                         <label>单位座机</label>
-                                        <input type="text" name="card[number]" maxlength="16" placeholder="tel">
+                                        <input type="text" name="work_tel" maxlength="16" placeholder="tel">
                                     </div>
                                 </div>
                                 
                                 <div class="three fields">
                                 <div class="required field">
                                     <label>省份</label>
-                                    <select class="ui fluid dropdown">
-                                        <option value="WV">四川</option>
-                                        <option value="WI">北京</option>
+                                    <select class="ui fluid dropdown" name="area_1" id="area_1">
+                                       
                                     </select>
                                 </div>
                                 <div class="required field">
                                     <label>城市</label>
-                                    <select class="ui fluid dropdown">
-                                        <option value="WV">成都</option>
-                                        <option value="WI">北京</option>
+                                    <select class="ui fluid dropdown" name="area_2" id="area_2">
                                     </select>
                                     </div>
                                 <div class="required field">
                                     <label>区/县</label>
-                                    <select class="ui fluid dropdown">
-                                        <option value="WV">高新区</option>
-                                        <option value="WI">朝阳区</option>
+                                    <select class="ui fluid dropdown" name="area_3" id="area_3">
                                     </select>
                                 </div>
                                 </div>
                                 <div class="field">
                                     <div class="field">
                                     <label>住址座机</label>
-                                    <input type="text" name="user[phone]" placeholder="tel">
+                                    <input type="text" name="home_tel" placeholder="tel">
                                     </div>
                                 </div>
 
@@ -172,18 +167,176 @@
                                 <div class="two fields">
                                     <div class="required field">
                                     <label>信用卡总张数</label>
-                                    <input type="text" name="user[name]" placeholder="credit card number">
+                                    <input type="text" name="credit_total_num" placeholder="credit card number">
                                     </div>
                                     <div class="required field">
                                     <label>信用卡总额度</label>
-                                    <input type="text" name="user[idcard]" placeholder="credit card limit">
+                                    <input type="text" name="credit_total_limit" placeholder="credit card limit">
                                     </div>
                                 </div>
                                 </div>
-                            <div class="ui button" tabindex="0">确认提交</div>
+                                {%if done==0 %}
+                                <div type="submit" class="ui button submit" onclick="$('#userinfo-form').submit()" tabindex="0">确认提交</div>
+                                {% endif %}
+                            <div class="ui error message"></div>
                     </form>
                 
         </div>
         </div>
+       
   </main>
+  <script>
+      $(function(){
+          // fillback
+        {%if info %}
+            var info = {{info|json_encode(constant('JSON_UNESCAPED_UNICODE'))| raw}};
+            for(var index in info)
+            {
+                $('[name="'+index+'"]').val(info[index]);
+            }
+            $('#area_1')
+            .dropdown({values: {{ province_json|raw }}});
+
+            var url = '/area/area_sub/'+info.area_1+'/'+info.area_2;
+            $.getJSON(url,function(res){
+                $('#area_2').dropdown({
+                    values: res
+                })
+            });
+            var url2 = '/area/area_sub/'+info.area_2+'/'+info.area_3;
+            $.getJSON(url2,function(res2){
+                $('#area_3').dropdown({
+                    values: res2
+                })  
+            })
+            {%else%}
+             // area
+            $('#area_1')
+                .dropdown({
+                    apiSettings: {
+                        // this url parses query server side and returns filtered results
+                        method : 'GET',
+                        url: '/area/area_1',
+                    },
+                    filterRemoteData: true,
+                    onChange: function(value, text, $selectedItem){
+                        if (value){
+                            var url = '/area/area_sub/'+value;
+                            $.getJSON(url,function(res){
+                                $('#area_2').dropdown('clear').dropdown({
+                                    values: res,
+                                    onChange: function(value, text, $selectedItem){
+                                        if (value){
+                                            var url = '/area/area_sub/'+value;
+                                            $.getJSON(url,function(res){
+                                                $('#area_3').dropdown('clear').dropdown({
+                                                    values: res
+                                                })
+                                            });
+                                        }
+                                    }
+                                })
+                            });
+                         }
+                    }
+                });
+
+            {%endif%}
+
+           
+
+      });
+        
+        $('#userinfo-form')
+        .form({
+            on: 'blur',
+            fields: {
+                user_phone: {
+                    identifier: 'user_phone',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入手机号'
+                    }
+                    ]
+                },
+                true_name: {
+                    identifier: 'true_name',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入申请人姓名'
+                    }
+                    ]
+                },
+                idcard: {
+                    identifier: 'idcard',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入身份证号码'
+                    }
+                    ]
+                },
+                sex: {
+                    identifier: 'sex',
+                    rules: [
+                    {
+                        type   : 'checked',
+                        prompt : '请选择性别'
+                    }
+                    ]
+                },
+                area_1: {
+                    identifier: 'area_1',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请选择省份'
+                    }
+                    ]
+                },
+                area_2: {
+                    identifier: 'area_2',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请选择市'
+                    }
+                    ]
+                },
+                area_3: {
+                    identifier: 'area_3',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请选择区'
+                    }
+                    ]
+                },
+                credit_total_num: {
+                    identifier: 'credit_total_num',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请填写信用张数'
+                    }
+                    ]
+                },
+                credit_total_limit: {
+                    identifier: 'credit_total_limit',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请填写信用卡额度'
+                    }
+                    ]
+                },
+               
+            }
+          });
+
+
+    </script>
+
 {% endblock %}

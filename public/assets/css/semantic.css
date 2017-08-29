@@ -1,4 +1,3 @@
-
  /*
  * # Semantic UI - 2.2.12
  * https://github.com/Semantic-Org/Semantic-UI
@@ -9,7 +8,7 @@
  * http://opensource.org/licenses/MIT
  *
  */
-/* @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin'); */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
 /*!
  * # Semantic UI 2.2.12 - Reset
  * http://github.com/semantic-org/semantic-ui/
@@ -2131,7 +2130,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   height: 11.11%;
 }
 
-.ui.ten.s.buttons > .button {
+.ui.ten.vertical.buttons > .button {
   height: 10%;
 }
 
@@ -2961,7 +2960,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.orange.buttons .button,
 .ui.orange.button {
-  background-color: rgb(253, 139, 42);
+  background-color: #F2711C;
   color: #FFFFFF;
   text-shadow: none;
   background-image: none;
@@ -3005,8 +3004,8 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.basic.orange.buttons .button,
 .ui.basic.orange.button {
-  box-shadow: 0px 0px 0px 1px rgb(253, 139, 42) inset !important;
-  color: rgb(253, 139, 42) !important;
+  box-shadow: 0px 0px 0px 1px #F2711C inset !important;
+  color: #F2711C !important;
 }
 
 .ui.basic.orange.buttons .button:hover,
@@ -5164,7 +5163,7 @@ i.flag:not(.icon) {
 i.flag:not(.icon):before {
   display: inline-block;
   content: '';
-  background: url("./themes/default/assets/images/flags.png") no-repeat -108px -1976px;
+  background: url("images/flags.png") no-repeat -108px -1976px;
   width: 16px;
   height: 11px;
 }
@@ -6785,7 +6784,7 @@ a.ui.inverted.red.header:hover {
 /*--- Orange ---*/
 
 .ui.orange.header {
-  color: rgb(253, 139, 42) !important;
+  color: #F2711C !important;
 }
 
 a.ui.orange.header:hover {
@@ -6793,7 +6792,7 @@ a.ui.orange.header:hover {
 }
 
 .ui.orange.dividing.header {
-  border-bottom: 2px solid rgb(253, 139, 42);
+  border-bottom: 2px solid #F2711C;
 }
 
 /* Inverted */
@@ -7467,7 +7466,7 @@ i.inverted.circular.red.icon {
 /* Orange */
 
 i.orange.icon {
-  color: rgb(253, 139, 42) !important;
+  color: #F2711C !important;
 }
 
 i.inverted.orange.icon {
@@ -7476,7 +7475,7 @@ i.inverted.orange.icon {
 
 i.inverted.bordered.orange.icon,
 i.inverted.circular.orange.icon {
-  background-color: rgb(253, 139, 42) !important;
+  background-color: #F2711C !important;
   color: #FFFFFF !important;
 }
 
@@ -12978,8 +12977,8 @@ a.ui.basic.red.label:hover {
 
 .ui.orange.labels .label,
 .ui.orange.label {
-  background-color: rgb(253, 139, 42) !important;
-  border-color: rgb(253, 139, 42) !important;
+  background-color: #F2711C !important;
+  border-color: #F2711C !important;
   color: #FFFFFF !important;
 }
 
@@ -13009,8 +13008,8 @@ a.ui.orange.label:hover {
 
 .ui.basic.orange.label {
   background-color: #FFFFFF !important;
-  color: rgb(253, 139, 42) !important;
-  border-color: rgb(253, 139, 42) !important;
+  color: #F2711C !important;
+  border-color: #F2711C !important;
 }
 
 .ui.basic.orange.labels a.label:hover,
@@ -16288,11 +16287,11 @@ ol.ui.horizontal.list li:before,
 /* Orange */
 
 .ui.orange.segment:not(.inverted) {
-  border-top: 2px solid rgb(253, 139, 42) !important;
+  border-top: 2px solid #F2711C !important;
 }
 
 .ui.inverted.orange.segment {
-  background-color: rgb(253, 139, 42) !important;
+  background-color: #F2711C !important;
   color: #FFFFFF !important;
 }
 
@@ -20122,7 +20121,7 @@ ol.ui.horizontal.list li:before,
 .ui.grid > .orange.row,
 .ui.grid > .orange.column,
 .ui.grid > .row > .orange.column {
-  background-color: rgb(253, 139, 42) !important;
+  background-color: #F2711C !important;
   color: #FFFFFF;
 }
 
@@ -22284,8 +22283,8 @@ Floated Menu / Item
 
 .ui.menu .orange.active.item,
 .ui.orange.menu .active.item {
-  border-color: rgb(253, 139, 42) !important;
-  color: rgb(253, 139, 42) !important;
+  border-color: #F2711C !important;
+  color: #F2711C !important;
 }
 
 .ui.menu .yellow.active.item,
@@ -22497,7 +22496,7 @@ Floated Menu / Item
 
 .ui.inverted.menu .orange.active.item,
 .ui.inverted.orange.menu {
-  background-color: rgb(253, 139, 42);
+  background-color: #F2711C;
 }
 
 .ui.inverted.orange.menu .item:before {
@@ -23526,8 +23525,8 @@ Floated Menu / Item
 
 .ui.orange.message {
   background-color: #FFEDDE;
-  color: rgb(253, 139, 42);
-  box-shadow: 0px 0px 0px 1px rgb(253, 139, 42) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  color: #F2711C;
+  box-shadow: 0px 0px 0px 1px #F2711C inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 .ui.orange.message .header {
@@ -24362,11 +24361,11 @@ Floated Menu / Item
 /* Orange */
 
 .ui.orange.table {
-  border-top: 0.2em solid rgb(253, 139, 42);
+  border-top: 0.2em solid #F2711C;
 }
 
 .ui.inverted.orange.table {
-  background-color: rgb(253, 139, 42) !important;
+  background-color: #F2711C !important;
   color: #FFFFFF !important;
 }
 
@@ -25770,7 +25769,7 @@ a.ui.card:hover,
 .ui.orange.cards > .card,
 .ui.cards > .orange.card,
 .ui.orange.card {
-  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px rgb(253, 139, 42), 0px 1px 3px 0px #D4D4D5;
+  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #F2711C, 0px 1px 3px 0px #D4D4D5;
 }
 
 .ui.orange.cards > .card:hover,
@@ -27769,7 +27768,7 @@ a.ui.card:hover,
 .ui.orange.statistics .statistic > .value,
 .ui.statistics .orange.statistic > .value,
 .ui.orange.statistic > .value {
-  color: rgb(253, 139, 42);
+  color: #F2711C;
 }
 
 .ui.yellow.statistics .statistic > .value,
@@ -33003,7 +33002,7 @@ a.ui.nag {
 /* Orange */
 
 .ui.orange.progress .bar {
-  background-color: rgb(253, 139, 42);
+  background-color: #F2711C;
 }
 
 .ui.orange.inverted.progress .bar {

@@ -20,7 +20,7 @@
                           <a class="item active" data-tab="first">登录</a>
                           <a class="item" data-tab="second">注册</a>
                       </div>
-                      <form class="ui large form bottom attached tab segment active" data-tab="first">
+                      <form class="ui large form bottom attached tab segment active" id="login-form" data-tab="first" action="/login" method="POST">
                           <div class="field">
                             <div class="ui left icon input">
                               <i class="user icon"></i>
@@ -34,32 +34,30 @@
                             </div>
                           </div>
                           <div class="field">
-                              <a href="/auth/login">
-                                <div class="ui fluid huge orange submit button">
+                                <div class="ui fluid huge orange submit button" onclick="$('#login-form').submit();">
                                     我要贷款<i class="right arrow icon"></i></div>
-                              </a>
                           </div>
                           <div class="field ui right aligned container">
                             <a class="gray" href="/find_password">忘记密码？</a>
                          </div>
                         <div class="ui error message"></div>
                       </form>
-                      <form class="ui large form bottom attached tab segment" data-tab="second">
+                      <form class="ui large form bottom attached tab segment" data-tab="second" id="regist-form" action="/regist" method="POST">
                               <div class="field">
                                 <div class="ui left icon input">
                                   <i class="user icon"></i>
-                                  <input type="text" name="phone" placeholder="手机号" autocomplete="off">
+                                  <input type="text" name="phone" id="regist-phone" placeholder="手机号" autocomplete="off">
                                 </div>
                               </div>
                               <div class="two fields">
                                     <div class="field">
                                         <div class="ui left icon input">
                                             <i class="share icon"></i>
-                                            <input type="password" name="password" placeholder="手机验证码" autocomplete="off">
+                                            <input type="text" name="code" placeholder="手机验证码" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="four wide field">
-                                        <a href="" class="ui orange send-code button">发送验证码</a>
+                                        <a href="javascript: send_code();" class="ui orange send-code button">发送验证码</a>
                                     </div>
                               </div>
                               <div class="field">
@@ -69,14 +67,12 @@
                                 </div>
                                 </div>
                                 <div class="field">
-                                <div class="ui left icon input">
+                                <!-- <div class="ui left icon input">
                                     <i class="lock icon"></i>
-                                    <input type="password" name="password" placeholder="密码确认" autocomplete="off">
+                                    <input type="password" name="password_check" placeholder="密码确认" autocomplete="off">
+                                </div> -->
                                 </div>
-                                </div>
-                                <a href="/userinfo">
-                                <div class="ui fluid large orange submit button">注册</div>
-                                </a>
+                                <div class="ui fluid large orange submit button" onclick="$('#regist-form').submit();">注册</div>
                             <div class="ui error message"></div>
                           </form>
                      
@@ -266,8 +262,99 @@
           </div>
     </main>
     <script>
+         function send_code(){
+            var phone = $("#regist-phone").val();
+            if(phone){
+                var url = '/send_code/'+phone;
+                timeCount();
+                
+                $.getJSON(url,function(res){
+                    alert(res.msg);
+                })
+            }else{
+                alert('请输入手机号');
+            }
+        }
+        var sec = '30';
+        function timeCount()
+        {
+            $(".send-code").addClass('disabled');
+            $(".send-code").text(sec+'秒');
+            window.setTimeout('timeCount()',1000);
+            if(sec <= 0){
+                $(".send-code").removeClass('disabled');
+                $(".send-code").text('发送验证码');
+            }
+            sec--;
+        }
+
         $('.menu .item')
             .tab();
         ;
+        $('#login-form')
+        .form({
+            fields: {
+                phone: {
+                    identifier: 'phone',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入手机号'
+                    }
+                    ]
+                },
+                password: {
+                    identifier: 'password',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入密码'
+                    }
+                    ]
+                },
+            }
+          });
+        $('#regist-form')
+        .form({
+            fields: {
+                phone: {
+                    identifier: 'phone',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入手机号'
+                    }
+                    ]
+                },
+                code: {
+                    identifier: 'code',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入短信验证码'
+                    }
+                    ]
+                },
+                password: {
+                    identifier: 'password',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请输入密码'
+                    }
+                    ]
+                },
+                // password_check: {
+                //     identifier: 'password_check',
+                //     rules: [
+                //     {
+                //         type   : '[password]',
+                //         prompt : '请保持密码一致'
+                //     }
+                //     ]
+                // },
+            }
+          });
+            
     </script>
 {% endblock %}

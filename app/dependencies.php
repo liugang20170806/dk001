@@ -3,6 +3,16 @@
 
 $container = $app->getContainer();
 
+// Service factory for the ORM
+$container['db'] = function ($container) {
+    $capsule = new \Illuminate\Database\Capsule\Manager;
+    $capsule->addConnection($container['settings']['db']);
+
+    $capsule->setAsGlobal();
+    $capsule->bootEloquent();
+
+    return $capsule;
+};
 
 // CSRF guard
 $container['csrf'] = function ($c) {
@@ -38,5 +48,5 @@ $container['AuthController'] = function ($c) {
 };
 
 $container['HomeController'] = function ($container) {
-    return new Controllers\HomeController;
+    return new \App\Controllers\HomeController;
 };

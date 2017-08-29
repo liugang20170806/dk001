@@ -7,6 +7,5 @@ class HomeCotroller
 
     public function index(){
         die('home');
-
     }
 }
