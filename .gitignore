@@ -3,4 +3,4 @@ cache
 logs
 tests
 vendor
-app/setting.php
+app/settings.php
