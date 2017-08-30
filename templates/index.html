@@ -136,7 +136,7 @@
                       </div>
                       <div class="row">
                         <div class="center aligned column">
-                            <a class="ui orange huge long button no_radius">立即借款</a>
+                            <a href="#" class="ui orange huge long button no_radius">立即借款</a>
                         </div>
                        </div>
                 </div>
@@ -144,7 +144,7 @@
         
 
 
-         <div class="ui segment caculate">
+         <!-- <div class="ui segment caculate">
                 <div class="ui center aligned padded grid ">
                       <div class="row">
                           <h1 class="ui dividing header centered">还款算一算</h1>
@@ -182,7 +182,7 @@
                         </div>
                        </div>
                 </div>
-         </div>
+         </div> -->
 
 
 
@@ -267,7 +267,6 @@
             if(phone){
                 var url = '/send_code/'+phone;
                 timeCount();
-                
                 $.getJSON(url,function(res){
                     alert(res.msg);
                 })
@@ -275,15 +274,17 @@
                 alert('请输入手机号');
             }
         }
-        var sec = '30';
+        var sec = '60';
         function timeCount()
         {
             $(".send-code").addClass('disabled');
             $(".send-code").text(sec+'秒');
-            window.setTimeout('timeCount()',1000);
+            var countctrl = window.setTimeout('timeCount()',1000);
             if(sec <= 0){
                 $(".send-code").removeClass('disabled');
                 $(".send-code").text('发送验证码');
+                clearTimeout(countctrl);
+                return false;
             }
             sec--;
         }

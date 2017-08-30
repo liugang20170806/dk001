@@ -120,13 +120,21 @@ $app->post('/userinfo/update', function ($request, $response, $args) use ($app,$
     }
 })->setName('userinfo');
 
-
+$app->get('/inquire_progress', function ($request, $response, $args) use ($app,$container) {
+    if(empty($_SESSION['user'])){
+        return $response->withRedirect('/');
+    }else{
+        $info =  $container->get('db')->table('userinfo');
+        $userinfo = $info->where('user_id',$_SESSION['user']['id'])->first();
+        return $this->view->render($response, 'inquire_progress.html',['userinfo'=>$userinfo]);
+    }
+});
 
 
 
 
 // area generate
-$app->get('/area/area_1', function ($request, $response, $args) use ($app,$container)    {
+$app->get('/area/area_1', function ($request, $response, $args) use ($app,$container) {
     $province = $container->get('db')->table('areas')->where('parent_id',0)->get();
     $area_1 = array();
     foreach ($province as $k => $v) {
@@ -148,7 +156,7 @@ $app->get('/area/area_sub[/{parent_id}[/{area_id}]]', function ($request, $respo
         $area_2[$k]['value'] = $v['area_id'];
         if (isset($args['area_id']) && $args['area_id'] == $v['area_id']) $area_2[$k]['selected'] = true;
     }
-    if (!isset($args['area_id'])) $area_2[1]['selected'] = true; 
+    // if (!isset($args['area_id'])) $area_2[1]['selected'] = true; 
  
     return json_encode($area_2,JSON_UNESCAPED_UNICODE);
 })->setName('/area/area_sub');

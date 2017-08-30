@@ -16,8 +16,6 @@ class AuthController
     }
 
     public function login($request, $response, $args) {
-        die('test');
-        return $this->view->render($response, 'find_password.html');
         //   $this->view->render($response, 'find_password.html');
         // }
     }

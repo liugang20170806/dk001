@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block body %}
+<main class="userinfo">
+        <!-- <div class="ui bottom attached segment"> -->
+                <div class="ui visible left vertical sidebar menu">
+                    <div class="item">
+                    <span class="ui orange button">LOGO</span>
+                    　个人中心
+                    </div>
+                <a href="/inquire_progress" class="item active" >
+                    <i class="home icon"></i>
+                    查询进度
+                </a>
+                <a href="/userinfo" class="item">
+                    <i class="block layout icon"></i>
+                    完善资料
+                </a>
+                <a href="/logout" class="item">
+                    <i class="block power icon"></i>
+                    退出登录
+                </a>
+                </div>
+                <div class="pusher">
+                <div class="ui container segment">
+                    <i class="info icon"></i>
+                    {%if userinfo.status == 1 %}
+                        资料正在审核中
+                    {% else %}
+                        你尚未提交资料
+                    {% endif %}
+                </div>
+
+</main>
+{% endblock %}

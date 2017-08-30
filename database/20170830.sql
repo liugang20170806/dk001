@@ -1,0 +1,2 @@
+ALTER TABLE `tb_userinfo` ADD `loan_amount` decimal(15,2) DEFAULT '0.00' COMMENT 'loan amount' AFTER `credit_total_limit`;
+ALTER TABLE `tb_userinfo` ADD `loan_usage` TEXT DEFAULT '' COMMENT 'loan usage' AFTER `loan_amount`;

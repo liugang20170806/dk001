@@ -7,11 +7,11 @@
             <span class="ui orange button">LOGO</span>
             　个人中心
             </div>
-        <a  href="/" class="item">
+        <a class="item" href="/inquire_progress">
             <i class="home icon"></i>
-            首页
+            查询进度
         </a>
-        <a class="item active">
+        <a href="/userinfo" class="item active">
             <i class="block layout icon"></i>
             完善资料
         </a>
@@ -175,6 +175,19 @@
                                     </div>
                                 </div>
                                 </div>
+                                <h4 class="ui dividing header">本次贷款申请情况</h4>
+                                <div class="field">
+                                    <div class="required field">
+                                        <label>贷款金额</label>
+                                        <input type="text" name="loan_amount" placeholder="loan amount">
+                                    </div>
+                                </div>
+                                    <div class="field">
+                                    <div class="required field">
+                                        <label>贷款用途</label>
+                                        <textarea name="loan_usage"></textarea>
+                                    </div>
+                                </div>
                                 {%if done==0 %}
                                 <div type="submit" class="ui button submit" onclick="$('#userinfo-form').submit()" tabindex="0">确认提交</div>
                                 {% endif %}
@@ -193,6 +206,7 @@
             for(var index in info)
             {
                 $('[name="'+index+'"]').val(info[index]);
+                $('[name="'+index+'"]').attr('disabled',true);
             }
             $('#area_1')
             .dropdown({values: {{ province_json|raw }}});
@@ -218,7 +232,7 @@
                         method : 'GET',
                         url: '/area/area_1',
                     },
-                    filterRemoteData: true,
+                    // filterRemoteData: true,
                     onChange: function(value, text, $selectedItem){
                         if (value){
                             var url = '/area/area_sub/'+value;
@@ -227,10 +241,16 @@
                                     values: res,
                                     onChange: function(value, text, $selectedItem){
                                         if (value){
+                                            var optionadd = '<option value='+value+'>'+text+'</option>';
+                                            $('#area_2').html(optionadd);
                                             var url = '/area/area_sub/'+value;
                                             $.getJSON(url,function(res){
                                                 $('#area_3').dropdown('clear').dropdown({
-                                                    values: res
+                                                    values: res,
+                                                    onChange: function(value, text, $selectedItem){
+                                                        var optionadd = '<option value='+value+'>'+text+'</option>';
+                                                        $('#area_3').html(optionadd);
+                                                    }
                                                 })
                                             });
                                         }
@@ -329,6 +349,24 @@
                     {
                         type   : 'empty',
                         prompt : '请填写信用卡额度'
+                    }
+                    ]
+                },
+                loan_amount: {
+                    identifier: 'loan_amount',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请填写贷款金额'
+                    }
+                    ]
+                },
+                loan_usage: {
+                    identifier: 'loan_usage',
+                    rules: [
+                    {
+                        type   : 'empty',
+                        prompt : '请填写贷款用途'
                     }
                     ]
                 },
