@@ -283,6 +283,7 @@
             if(sec <= 0){
                 $(".send-code").removeClass('disabled');
                 $(".send-code").text('发送验证码');
+                sec = 60;
                 clearTimeout(countctrl);
                 return false;
             }
