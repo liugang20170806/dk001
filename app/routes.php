@@ -184,9 +184,9 @@ $app->get('/send_code/[{phone}]', function ($request, $response, $args) {
         $result = $clapi->execResult($result);
         if(isset($result[1]) && $result[1] == '0'){
             $_SESSION['smscode'] = $code;
-            return json_encode(array('msg'=> 'success'),JSON_UNESCAPED_UNICODE);
+            return json_encode(array('msg'=> '发送成功'),JSON_UNESCAPED_UNICODE);
         }else{
-            return json_encode(array('msg'=>"failed"),JSON_UNESCAPED_UNICODE);
+            return json_encode(array('msg'=>"发送失败"),JSON_UNESCAPED_UNICODE);
         }
     }
    
